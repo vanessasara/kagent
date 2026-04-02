@@ -1,0 +1,17 @@
+apiVersion: kagent.dev/v1alpha2
+kind: Agent
+metadata:
+  name: cert-manager-agent
+  namespace: kagent
+spec:
+  description: Certificate management expert that monitors TLS certificate health
+  type: BYO
+  byo:
+    deployment:
+      image: localhost:5001/cert-manager-agent:latest
+      env:
+        - name: GOOGLE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: kagent-google
+              key: GOOGLE_API_KEY

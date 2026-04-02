@@ -1,0 +1,14 @@
+[project]
+name = "cert-manager-agent"
+version = "0.1.0"
+description = "Sample cert-manager monitoring agent for kagent"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "google-adk>=1.8.0",
+  "kagent-tools-cert-manager>=0.1.0",
+  "kubernetes>=31.0.0",
+]
+
+[tool.uv.sources]
+kagent-tools-cert-manager = { workspace = true }
