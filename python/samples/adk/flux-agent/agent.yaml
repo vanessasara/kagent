@@ -1,0 +1,17 @@
+apiVersion: kagent.dev/v1alpha2
+kind: Agent
+metadata:
+  name: flux-agent
+  namespace: kagent
+spec:
+  description: GitOps expert for managing FluxCD continuous delivery pipelines
+  type: BYO
+  byo:
+    deployment:
+      image: localhost:5001/flux-agent:latest
+      env:
+        - name: GOOGLE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: kagent-google
+              key: GOOGLE_API_KEY

@@ -1,0 +1,12 @@
+[project]
+name = "flux-agent"
+version = "0.1.0"
+description = "Flux GitOps agent using kagent-tools-flux"
+readme = "README.md"
+dependencies = [
+  "google-adk>=1.8.0",
+  "kagent-tools-flux>=0.1.0",
+]
+
+[tool.uv.sources]
+kagent-tools-flux = {workspace = true}
